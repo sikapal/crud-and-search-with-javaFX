@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skpcorp.crud.StudentController">
+   <children>
+      <GridPane layoutX="23.0" layoutY="12.0" prefHeight="129.0" prefWidth="83.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="FIRST NAME" GridPane.halignment="RIGHT" />
+            <Label text="MIDDLE NAME" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label text="LAST NAME" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="136.0" layoutY="14.0" prefHeight="123.0" prefWidth="419.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="fieldFirstname" prefWidth="411.0" />
+            <TextField fx:id="fieldMiddlename" GridPane.rowIndex="1" />
+            <TextField fx:id="fieldLastname" prefHeight="25.0" prefWidth="390.0" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Button fx:id="btnNew" layoutX="149.0" layoutY="149.0" mnemonicParsing="false" onAction="#clicknewbutton" prefHeight="33.0" prefWidth="63.0" text="New" />
+      <Button fx:id="btnSave" layoutX="254.0" layoutY="149.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="33.0" prefWidth="63.0" text="Save" />
+      <Button fx:id="btnUpdate" layoutX="360.0" layoutY="149.0" mnemonicParsing="false" onAction="#updateStudent" prefHeight="33.0" prefWidth="63.0" text="Update" />
+      <Button fx:id="btnDelete" layoutX="478.0" layoutY="149.0" mnemonicParsing="false" onAction="#deleteStudent" prefHeight="33.0" prefWidth="63.0" text="Delete" />
+      <Label layoutX="37.0" layoutY="192.0" prefHeight="25.0" prefWidth="53.0" text="Search:" />
+      <TextField fx:id="fieldSearch" layoutX="85.0" layoutY="192.0" prefHeight="25.0" prefWidth="464.0" promptText="Search..." />
+      <TableView fx:id="tableView" layoutX="35.0" layoutY="226.0" onMouseClicked="#mouseClicked" prefHeight="150.0" prefWidth="520.0">
+        <columns>
+          <TableColumn fx:id="colid" minWidth="0.0" prefWidth="53.33331298828125" text="Id" />
+            <TableColumn fx:id="colFirstname" minWidth="25.0" prefWidth="148.66665649414062" text="FIRST NAME" />
+          <TableColumn fx:id="colMiddlename" minWidth="25.0" prefWidth="161.3333740234375" text="MIDDLE NAME" />
+            <TableColumn fx:id="colLastname" minWidth="25.0" prefWidth="157.3333740234375" text="LASTNAME" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
